@@ -3,7 +3,7 @@
 
 :root{
     --standard-font: 'DotGothic16', sans-serif;
-    --standard-font-size: 2rem;
+    --standard-font-size: clamp(1.5rem, 4vw, 2rem);
     --mobile-threshold: 1050px;
     --blue: rgb(0, 110, 255);
     --red: rgb(255, 88, 37);
@@ -67,8 +67,6 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    text-shadow: 1px 1px rgb(255, 255, 255, .5);
-    font-size: 3rem;
     flex: 3;
     gap: 1rem;
 }
@@ -90,10 +88,15 @@ body{
     border-radius: 1rem;
     padding: 1rem;
     font-family: var(--standard-font);
-    font-size: 2rem;
+    font-size: clamp(1.25rem, 3vw, 1.7rem);
     min-width: 10%;
     border: 2px solid rgb(255, 196, 0);
 
+}
+
+.form > div{
+    font-weight: bold;
+    font-size: clamp(2rem, 6vw, 3rem);
 }
 
 .bottom{
@@ -111,6 +114,7 @@ body{
     background: var(--button-color);
     color: white;
     border: 2px solid var(--button-color);
+    font-size: 1.5rem;
 }
 
 .button:hover{
@@ -133,5 +137,11 @@ body{
 
     .signup{
         flex: 1 1 50%;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .form > form{
+        grid-template-columns: 1fr;
     }
 }
