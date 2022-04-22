@@ -8,8 +8,8 @@
     --blue: rgb(0, 110, 255);
     --red: rgb(255, 88, 37);
     --button-color: rgb(209, 78, 61);
-    --form-color: rgb(199, 30, 30);
-    --background: linear-gradient(rgb(91, 91, 245), rgb(104, 203, 236));
+    --form-color: rgb(39, 39, 39);
+    --background: rgb(19, 19, 19);
 }
 
 *{
@@ -30,7 +30,7 @@ body{
 }
 
 .spotlight{
-    flex: 3;
+    flex: 4;
     background: url("./assets/spotlight.jpg") no-repeat;
     background-size: cover;
     background-position: center;
@@ -46,11 +46,10 @@ body{
 }
 
 .signup{
-    flex: 7;
+    flex: 6;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
-    padding: 2rem;
+    gap: 2rem;
 }
 
 .welcome{
@@ -59,7 +58,12 @@ body{
     justify-content: flex-end;
     text-align: center;
     flex: 3;
-    text-shadow: 1px 1px rgb(255, 255, 255, .5);
+    color: white;
+    padding: 2rem;
+}
+
+.welcome > div > span{
+    color: var(--red);
 }
 
 .form{
@@ -69,6 +73,10 @@ body{
     flex-direction: column;
     flex: 3;
     gap: 1rem;
+    padding: 2rem;
+
+    background: rgb(31, 31, 31);
+    box-shadow: 5px 15px 30px 2px rgb(0, 0, 0);
 }
 
 .form > form{
@@ -76,12 +84,8 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
-    background: var(--form-color);
     padding: 1rem;
     border-radius: .5rem;
-    box-shadow: 0px 10px 10px 2px rgb(32, 32, 32);
-    border: 10px ridge rgb(255, 208, 0);
-
 }
 
 .form > form > input{
@@ -90,18 +94,21 @@ body{
     font-family: var(--standard-font);
     font-size: clamp(1.25rem, 3vw, 1.7rem);
     min-width: 10%;
-    border: 2px solid rgb(255, 196, 0);
+    background: #333;
+    color: white;
 
 }
 
 .form > div{
     font-weight: bold;
     font-size: clamp(2rem, 6vw, 3rem);
+    color: white;
 }
 
 .bottom{
     display: flex;
-    flex: 3
+    flex: 3;
+    padding: 1rem;
 }
 
 .button{
