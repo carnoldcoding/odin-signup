@@ -1,5 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root{
+    --standard-font: 'VT323', monospace;
+    --standard-font-size: 2rem;
+    --mobile-threshold: 1050px;
+    --blue: rgb(0, 110, 255);
+    --red: rgb(255, 88, 37);
+    --button-color: rgb(209, 78, 61);
+    --form-color: rgb(88, 116, 241);
+}
+
 *{
     margin: 0;
     padding: 0;
     border: 0;
+}
+
+body{
+    font-family: var(--standard-font);
+    font-size: var(--standard-font-size);
+}
+
+.container{
+    display: flex;
+    background: linear-gradient(var(--red), var(--blue));
+    min-height: 100vh;
+}
+
+.spotlight{
+    flex: 3;
+    background: url("./assets/spotlight.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
+}
+
+.watermark{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    color: white;
+    background: rgb(0,0,0,.8);
+}
+
+.signup{
+    flex: 7;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 2rem;
+}
+
+.welcome{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex: 3;
+    text-shadow: 1px 1px white;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-shadow: 1px 1px white;
+    font-size: 3rem;
+    flex: 3;
+    gap: 1rem;
+}
+
+.form > form{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    background: var(--form-color);
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: 0px 10px 10px 2px rgb(32, 32, 32);
+}
+
+.form > form > input{
+    border-radius: 1rem;
+    padding: 1rem;
+    font-family: var(--standard-font);
+    font-size: 2rem;
+    min-width: 10%;
+}
+
+.bottom{
+    display: flex;
+    flex: 3
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 150px;
+    border-radius: 1rem;
+    background: var(--button-color);
+    color: white;
+    border: 2px solid var(--button-color);
+}
+
+.button:hover{
+    background: white;
+    color: var(--button-color);
+    cursor: pointer;
+    user-select: none;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .container{
+        flex-direction: column;
+    }
+    .spotlight{
+        background-image: url("./assets/spotlight-landscape.jpg");
+        background-position: center;
+        flex: 1 1 50%;
+    }
+
+    .signup{
+        flex: 1 1 50%;
+    }
 }
